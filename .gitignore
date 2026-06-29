@@ -216,3 +216,30 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Word temporary files
+~$*.docx
+*.tmp
+
+# VS Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python/ML standard ignores (Best practice)
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+pyproject.toml
+uv.lock
+.python-version
+main.py
+
+# Virtual environments
+.venv/
