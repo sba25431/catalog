@@ -19,3 +19,9 @@ jobs:
 
       - name: Run Pytest
         run: uv run pytest
+
+      - name: Check missing migrations
+        run: uv run manage.py makemigrations --check
+
+      - name: Run migrations
+        run: uv run manage.py migrate
