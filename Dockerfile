@@ -14,5 +14,5 @@ RUN uv sync --frozen
 # Copy the rest of the application source code into the working directory
 COPY . .
 
-# Default command (will be replaced by Entrypoint in Step 5)
-CMD ["uv", "run", "manage.py", "runserver", "0.0.0.0:8000"]
+# Entrypoint
+ENTRYPOINT ["./entrypoint.sh"]

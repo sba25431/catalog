@@ -1,0 +1,25 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DEVELOPMENT_MODE=False
+      - DATABASE_USER=books
+      - DATABASE_PASSWORD=books
+      - DATABASE_HOST=db
+      - DATABASE_NAME=books
+
+  db:
+    image: postgres:17.5
+    environment:
+      - POSTGRES_USER=books
+      - POSTGRES_PASSWORD=books
+      - POSTGRES_DB=books
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
