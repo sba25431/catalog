@@ -35,6 +35,7 @@ jobs:
 
       - name: Setup environment
         uses: ./.github/actions/install-dependencies
+        
       - name: Run migrations
         run: uv run manage.py migrate
 
@@ -47,8 +48,7 @@ jobs:
       packages: write
       attestations: write
       id-token: write
-
-  steps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
