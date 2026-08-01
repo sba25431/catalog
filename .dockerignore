@@ -1,6 +1,13 @@
 .git/
+
 __pycache__/
+*.py[codz]
+*$py.class
+
 .vscode/
+
 .venv/
+
 db.sqlite3
+
 .claude/

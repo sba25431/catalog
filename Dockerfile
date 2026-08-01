@@ -1,4 +1,4 @@
-# Use official lightweight Debian image with Python 3.13
+# use official lightweight Debian image with Python 3.13
 FROM python:3.13-slim
 
 # Set working directory inside the container
@@ -11,8 +11,8 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen
 
-# Copy the rest of the application source code into the working directory
+# copy the rest of the application source code into the working directory
 COPY . .
 
-# Entrypoint
+# entrypoint
 ENTRYPOINT ["./entrypoint.sh"]
