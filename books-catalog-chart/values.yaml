@@ -1,2 +1,12 @@
 image:
-  tag: e5d4c9adf5a99b321656798e80853d2aa3e118ca
+  repository: ghcr.io/sba25431/catalog
+  tag: latest
+
+postgresql:
+  image:
+    tag: "latest"
+  auth:
+    database: books
+    username: books
+    password: books
+    postgresPassword: books

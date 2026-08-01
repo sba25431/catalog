@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: books-catalog-migration
+spec:
+  template:
+    spec:
+      containers:
+        - name: migration
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ["uv", "run", "manage.py", "migrate"]
+          envFrom:
+            - configMapRef:
+                name: books-catalog-envs
+      restartPolicy: OnFailure

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: books-catalog-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: books-catalog
+  template:
+    metadata:
+      labels:
+        app: books-catalog
+    spec:
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: books-catalog-envs

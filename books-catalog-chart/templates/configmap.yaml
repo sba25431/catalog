@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: books-catalog-envs
+data:
+  DEVELOPMENT_MODE: "False"
+  DATABASE_HOST: "{{ .Release.Name }}-postgresql"
+  DATABASE_NAME: "{{ .Values.postgresql.auth.database }}"
+  DATABASE_USER: "{{ .Values.postgresql.auth.username }}"
+  DATABASE_PASSWORD: "{{ .Values.postgresql.auth.password }}"
