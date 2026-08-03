@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/sba25431/catalog
-  tag: 3b7be7da7c4b1d398bcf818c8b9c98881988f601
+  tag: fc80486051402174f3a96e9a49f6229553632401
 postgresql:
   image:
     tag: latest
